@@ -1,24 +1,3 @@
-
-```
-git clone git@github.com:davidwalter0/ng
-cd ng
-ln -s /path/to/resource/node_modules node_modules
-
-# Depending on how much work needs to be done / how much angular
-# config is in place the steps vary ]
-# copy 
-# If src directory has most of the components for angular
-mv src src.orig
-ls -s /path/to/apps/src src
-cd src
-cp -rPp ../src.orig/environment ./environment/
-cp -rPp ../src.orig/assets      ./assets/
-
-mv package.json package.json.orig
-mv systemjs.config.js systemjs.config.js.orig
-
-```
-
 # Skeleton Angular App
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
@@ -50,3 +29,41 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+```
+git clone git@github.com:davidwalter0/ng
+cd ng
+ln -s /path/to/resource/node_modules node_modules
+
+# Depending on how much work needs to be done / how much angular
+# config is in place the steps vary ]
+# copy 
+# If src directory has most of the components for angular
+mv src src.orig
+ls -s /path/to/apps/src src
+cd src
+cp -rPp ../src.orig/environment ./environment/
+cp -rPp ../src.orig/assets      ./assets/
+
+mv package.json package.json.orig
+mv systemjs.config.js systemjs.config.js.orig
+
+```
+
+You man need to comment out items like these to avoid duplicate and
+conflicting versions
+
+```
+  <!-- <script src="node_modules/core-js/client/shim.min.js"></script> -->
+  <!-- <script src="node_modules/zone.js/dist/zone.js"></script> -->
+
+  <!-- <script src="node_modules/typescript/lib/typescript.js"></script> -->
+  <!-- <script src="node_modules/systemjs/dist/system.src.js"></script> -->
+  <!-- <script src="systemjs.config.js"></script> -->
+  <!-- <script> -->
+  <!--   System.import('app').catch(function (err) {console.error(err);}); -->
+  <!-- </script> -->
+
+```
