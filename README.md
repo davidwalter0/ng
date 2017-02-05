@@ -1,3 +1,12 @@
+Trick:
+
+Generate tags table, default is a deprecated/breaking key word
+
+    find -iname '*.ts' -print0|xargs -0 etags 
+    emacs M-x tags-query-replace <ENTER> \(export[ *]\)\(default\)\([ *].*\) <ENTER> \1 \3
+    
+
+
 # Skeleton Angular App
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
